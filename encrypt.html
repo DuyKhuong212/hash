@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encrypt and Decrypt</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Liên kết tệp CSS -->
+</head>
+
+<body>
+    <div class="input-text">
+        <label for="text">Enter Text: </label>
+        <input type="text" id="text" />
+    </div>
+    <div>
+        <label for="encryptedText"></label>
+        <span id="encryptedText"></span>
+    </div>
+    <div>
+        <label for="decryptedText"> </label>
+        <span id="decryptedText"></span>
+    </div>
+    <div class="button-flex">
+        <button id="encryptButton" class="center-button">Encrypt</button>
+        <button id="decryptButton" class="center-button">Decrypt</button>
+    </div>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="modalText"></span>
+            <br/>
+            <div class="button-modal">
+                <button id="closeModal">Close</button>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
