@@ -22,6 +22,11 @@ function openModal(text) {
   const modal = document.getElementById('modal');
   const modalText = document.getElementById('modalText');
   modal.style.display = 'block';
+  if (text.length > 20) {
+    modalText.innerHTML = text.slice(0, 20) + '<br>' + text.slice(20);
+    return;
+  }
+  
   modalText.textContent = text;
 }
 

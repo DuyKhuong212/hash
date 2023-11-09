@@ -38,7 +38,13 @@ button:hover {
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
-
+.modalText {
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .modal-content {
     background-color: #fff;
     position: fixed;
