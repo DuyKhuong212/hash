@@ -26,6 +26,7 @@ button {
 button:hover {
     background-color: #239ea4;
 }
+
 .modal {
     display: flex;
     justify-content: center;
@@ -38,29 +39,33 @@ button:hover {
     background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
-.modalText {
-    display: block;
-    width: 100px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+
+#modalText {
+    max-width: 100%;
 }
+
+@media (min-width: 768px) {
+    /* Điều chỉnh kích thước cho màn hình lớn hơn 768px nếu cần */
+}
+
 .modal-content {
     background-color: #fff;
     position: fixed;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 150px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 80%; /* Đặt kích thước modal theo mong muốn */
+    max-width: 80%;
+    /* Đặt kích thước modal theo mong muốn */
 }
 
 #encryptedText,
 #decryptedText {
     display: none;
 }
+
 .input-text {
     position: fixed;
     top: 40%;
@@ -72,7 +77,8 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Đảm bảo nút ở giữa theo chiều dọc */
+    height: 100vh;
+    /* Đảm bảo nút ở giữa theo chiều dọc */
 }
 
 .button-modal {
