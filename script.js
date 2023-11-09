@@ -25,26 +25,25 @@ function openModal(text) {
   modalText.textContent = text;
 }
 
-modalText.addEventListener('click', function () {
-  // Tạo một vùng chọn (range) cho nội dung modalText
-  const range = document.createRange();
-  range.selectNodeContents(modalText);
+// Tạo một hàm sao chép nội dung modalText vào clipboard
+function copyToClipboard() {
+  const modalText = document.getElementById('modalText');
+  const textToCopy = modalText.textContent;
 
-  // Lựa chọn nội dung trong vùng chọn
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  selection.addRange(range);
+  const textArea = document.createElement('textarea');
+  textArea.value = textToCopy;
+  document.body.appendChild(textArea);
 
-  // Sao chép nội dung đã chọn
+  textArea.select();
   document.execCommand('copy');
 
-  // Bỏ chọn sau khi sao chép
-  selection.removeAllRanges();
+  document.body.removeChild(textArea);
+  alert('Nội dung đã được sao chép vào clipboard!');
+}
 
-  // Thông báo cho người dùng nếu nội dung đã được sao chép
-  alert('Nội dung đã được sao chép!');
-  return;
-});
+// Gán chức năng sao chép vào nút "Copy" trong phần modal-content khi người dùng nhấp vào nó
+const copyButton = document.getElementById('copy');
+copyButton.addEventListener('click', copyToClipboard);
 
 // Hàm để đóng modal
 function closeModal() {
